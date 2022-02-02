@@ -1,0 +1,10 @@
+input:               output:
+8                    red 57
+red 57               orange 23 
+indigo 2             yellow 87
+greeen 9             green 9
+blue 5               blue 6
+blue 6               blue 5
+orange 23            indigo 2 
+purple 4             purple 4
+yellow 87

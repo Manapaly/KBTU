@@ -1,0 +1,16 @@
+3
+Italy
+4
+Palermo Venezia Rome Pozitano
+Germany
+2
+Bavaria Berlin
+Qazaqstan
+4
+Almaty Uralsk Aksu Aktobe
+5
+Almaty
+Berlin
+Rome
+Positano
+New-York
