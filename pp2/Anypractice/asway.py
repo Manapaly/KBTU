@@ -1,6 +1,7 @@
 
 n = list(map(int,input().split()))
 m = 0
+kk = []
 for k in range(len(n)):
     for i in range(m, m+n[m] + 1):
         if m + n[m] >= len(n)-1:
@@ -8,8 +9,7 @@ for k in range(len(n)):
             exit()
         if n[m] + m < n[i] + i:
             m = i
-        #   print(m, end=" ")
+            kk.append(m)
         
-
-    
+print(kk)
 print(0)
