@@ -7,4 +7,4 @@ d = {
 
 #d2 = dict(sorted(d, key = lambda x: (int(x[:2]), x[0][1])))
 print(d[0][1])
-print(d2, end = '/n')
+# print(d2, end = '/n')

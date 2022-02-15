@@ -1,1 +1,1 @@
-print(p'{int(input()):,}')
+# print(p'{int(input()):,}')
