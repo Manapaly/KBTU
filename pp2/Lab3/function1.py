@@ -48,6 +48,7 @@ def spy_game(nums):
     for i in range(2,len(res)):
         if res[i]==7 and res[i-1]==0 and res[i-2]==0: return True
     return False
+
 import math
 def volume_of_a_sphere(r):
     return (4/3) * math.pi * (r**3)
