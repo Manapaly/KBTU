@@ -9,7 +9,7 @@ for k in range(len(n)):
         if n[m] + m < n[i] + i:
             m = i
         #   print(m, end=" ")
-        
 
-    
+
+
 print(0)
