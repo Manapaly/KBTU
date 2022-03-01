@@ -2,10 +2,13 @@ import json
 
 f = open('sample-data.json','r')
 temp = f.read()
-l = open('a.txt', 'r')
-a = l.read()
 dd = json.loads(temp)
-print(a)
+print('Interface Status')
+print('================================================================================')
+print('DN                                                 Description           Speed    MTU  ')
+print('-------------------------------------------------- --------------------  ------  ------')
 for i in dd['imdata']:
-    print(i["l1PhysIf"]["attributes"]["dn"] ,' '*29 ,i["l1PhysIf"]["attributes"]['speed'],' ' ,i["l1PhysIf"]["attributes"]['mtu'])
-
+    if len(i["l1PhysIf"]["attributes"]["dn"]) == 42:
+        print(i["l1PhysIf"]["attributes"]["dn"] ,' '*29,i["l1PhysIf"]["attributes"]['speed'],' ' ,i["l1PhysIf"]["attributes"]['mtu'])
+    else:
+        print(i["l1PhysIf"]["attributes"]["dn"] ,' '*30,i["l1PhysIf"]["attributes"]['speed'],' ' ,i["l1PhysIf"]["attributes"]['mtu'])
