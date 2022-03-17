@@ -1,3 +1,5 @@
+# Write a Python program to write a list to a file.
+
 color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
 
 with open('check-for5.txt', "w") as myfile:

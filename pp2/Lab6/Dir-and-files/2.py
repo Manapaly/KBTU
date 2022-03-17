@@ -1,4 +1,5 @@
-# Флаги: 
+# Write a Python program to check for access to a specified path. Test the existence, 
+# readability, writability and executability of the specified path
 # os.F_OK - объект существует, 
 # os.R_OK - доступен на чтение, 
 # os.W_OK - доступен на запись, 
