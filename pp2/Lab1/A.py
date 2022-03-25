@@ -1,1 +1,1 @@
-print(~int(input()))
+print(max([12, 5, 2, 6, 47, 9, 15, 1]))

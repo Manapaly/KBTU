@@ -5,10 +5,10 @@ using namespace std;
 int main(){
     int a;
     cin>>a;
-    for(int i=2;i<=a;i++){
+    for(int i=a-1;i>=1;i--){
         if(a%i==0){
-            cout<<i<<' ';
-            break;
+        cout<<i<<' ';
+        break;
         }
     }
     return 0;
