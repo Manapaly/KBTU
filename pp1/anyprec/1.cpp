@@ -4,20 +4,24 @@ using namespace std;
 
 
 int main(){
-    int n;
-    cin>>n;
-    int cnt=0;
-    while(n>0){
-        string s;
-        getline(cin,s);
-        string k="";
-        for(int j=0;j<s.size();j++){
-            k=s[j]+k;
-        }
-        if(s==k){
-            cnt++;
+    int n,m;
+    cin>>n>>m;
+    int a[n][m];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin>>a[i][j];
         }
     }
-    cout<<cnt;
+    int result = 0;
+    int a1,b1;
+    cin>>a1>>b1;
+    int a2,b2;
+    cin>>a2>>b2;
+    for(int i=a1; i<=a2;i++){
+        for(int j=b1; j<=b2;j++){
+            result = result + a[i][j];
+        }
+    }
+    cout<<result;
     return 0;
 }
