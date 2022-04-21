@@ -1,27 +1,25 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+float a[10];
+float b[10];
 
 int main(){
-    int n,m;
-    cin>>n>>m;
-    int a[n][m];
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            cin>>a[i][j];
-        }
+    float sum = 0;
+    float res = 0;
+    float sum1 = 0;
+    for(int i=0;i<10;i++){
+        cin>>a[i];
+        sum1 += a[i];
     }
-    int result = 0;
-    int a1,b1;
-    cin>>a1>>b1;
-    int a2,b2;
-    cin>>a2>>b2;
-    for(int i=a1; i<=a2;i++){
-        for(int j=b1; j<=b2;j++){
-            result = result + a[i][j];
-        }
+    for(int i=0;i<10;i++){
+        cin>>b[i];
+        sum += b[i];
     }
-    cout<<result;
+    for(int i=0;i<10;i++){
+        res = res + (((b[i]-float(sum/10))*(b[i]-float(sum/10))*a[i])/sum1);
+        cout<<b[i]<< " " << a[i] << endl;
+    }
+    cout<<endl<<sum/10 << " " <<sqrt(res);
     return 0;
 }
