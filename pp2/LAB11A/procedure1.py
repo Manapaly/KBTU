@@ -22,7 +22,7 @@ def add_number(id,name,soname,email,nomer):
     finally:
         if conn is not None:
             conn.close()
-        return True
+        
 def update_number(name,nomer):
     conn = None
     try:

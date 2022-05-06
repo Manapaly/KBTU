@@ -44,3 +44,15 @@ end;
 $$
 language plpgsql;
 """
+"""
+create or replace procedure delete_user(
+    user_name varchar
+)
+as $$
+
+begin
+    delete from phonebook_lab11 where username = user_name;
+end;
+$$
+language plpgsql;
+"""

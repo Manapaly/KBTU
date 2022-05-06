@@ -1,4 +1,3 @@
-
 #create
 import psycopg2
 
@@ -14,15 +13,12 @@ current = config.cursor()
 
 current.execute(
 """
-
-create or replace procedure update_number(
-    user_name varchar,
-    user_number varchar
+create or replace procedure delete_user(
+    user_name varchar
 )
 as $$
-
 begin
-    Update phonebook_lab11 set usernumber = user_number where username = user_name;
+    delete from phonebook_lab11 where username = user_name;
 end;
 $$
 language plpgsql;
