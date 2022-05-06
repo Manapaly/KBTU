@@ -14,9 +14,9 @@ def add_number(id,name,soname,email,nomer):
         cur.close()
         
     except:
+        update_number(name,nomer)
         print('Этот пользователь уже существует, из за этого поменялся только номер телефона')
-        return False
-        update_number('Samat','87779870000')
+        # update_number('Samat','87779870000')
         # conn.commit()
         # cur.close()
     finally:
@@ -40,6 +40,5 @@ def update_number(name,nomer):
         if conn is not None:
             conn.close()
 
-if add_number(11,"Samat", 'Manapaly','sss_super','87770998232')==False:
-    print('opop')
-    update_number('Samat','87779870000')
+add_number(11,"Samat", 'Manapaly','sss_super','87777777777')
+   
