@@ -12,17 +12,14 @@ config.autocommit = True
 cursor = config.cursor()
   
   
-sql = '''COPY phonebook(username,number)
-FROM 'D:\pp\pp2\Lab10\part1\data.csv'
-DELIMITER ' '
-CSV HEADER;'''
+# sql = '''SELECT * FROM phonebook'''
+# sql1 = '''SELECT USERNAME FROM phonebook'''
+sql2 = '''SELECT * from phonebook where username LIKE '%a%' '''
   
-cursor.execute(sql)
-  
-sql3 = '''select * from phonebook;'''
-cursor.execute(sql3)
+cursor.execute(sql2)
+
 for i in cursor.fetchall():
-    print(i)
+    print(*i)
   
 config.commit()
 config.close()

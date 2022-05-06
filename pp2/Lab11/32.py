@@ -12,14 +12,14 @@ config.autocommit = True
 cursor = config.cursor()
   
   
-sql = '''COPY phonebook(username,number)
-FROM 'D:\pp\pp2\Lab10\part1\data.csv'
+sql = '''COPY accounts(user_id,username,email)
+FROM 'D:\pp\pp2\Lab11\data.csv'
 DELIMITER ' '
 CSV HEADER;'''
   
-cursor.execute(sql)
+# cursor.execute(sql)
   
-sql3 = '''select * from phonebook;'''
+sql3 = '''select * from accounts;'''
 cursor.execute(sql3)
 for i in cursor.fetchall():
     print(i)
