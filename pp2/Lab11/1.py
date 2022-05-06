@@ -1,32 +1,33 @@
+"""
+create or replace function get_data_by_id2(id integer)
+returns TABLE(user_id integer, username varchar) as
+$$
+begin
+    return query
+    select accounts.user_id, accounts.username from accounts where accounts.user_id=id;
+end;
+$$
+language plpgsql;
+"""
 import psycopg2
 from config import config
 
-
-def get_parts(vendor_id):
-    """ get parts provided by a vendor specified by the vendor_id """
+def get_account(id):
     conn = None
     try:
-        # read database configuration
         params = config()
-        # connect to the PostgreSQL database
         conn = psycopg2.connect(**params)
-        # create a cursor object for execution
         cur = conn.cursor()
-        # another way to call a function
-        # cur.execute("SELECT * FROM get_parts_by_vendor( %s); ",(vendor_id,))
-        cur.callproc('get_parts_by_vendor2', (vendor_id,))
-        # process the result set
+        cur.callproc('get_account_by_id2', (id, ))
         row = cur.fetchone()
         while row is not None:
             print(row)
             row = cur.fetchone()
-        # close the communication with the PostgreSQL database server
         cur.close()
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
+    except Exception as e:
+        print(str(e))
     finally:
         if conn is not None:
             conn.close()
 
-if __name__ == '__main__':
-    get_parts(1)
+get_account(2)

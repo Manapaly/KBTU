@@ -215,7 +215,9 @@ def main():
        
 
         update_score(name,SCORE,LEVEL,'snake')
-        update_record(name,'snake',SCORE)
+        if SCORE > record('Snake',name):
+            update_record(name,'snake',SCORE)
+
         score_img = score_font.render( str(SCORE), True, WHITE)
         level_img = level_font.render( str(LEVEL), True, WHITE)
 

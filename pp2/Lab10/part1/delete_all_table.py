@@ -11,7 +11,7 @@ config = psycopg2.connect(
 config.autocommit = True
 cursor = config.cursor()
 
-sql_update_query = f"""DELETE FROM phonebook"""
+sql_update_query = f"""DELETE рекорд FROM snake"""
 cursor.execute(sql_update_query)
 
 config.commit()

@@ -48,17 +48,17 @@ def update_record(name,tablename,new_score):
     config.autocommit = True
     cursor = config.cursor()
     
-    sql = f"""Select user_score from {tablename} where username = '{name}' """
+    sql = f"""Update {tablename} set рекорд = '{new_score}' where username = '{name}'"""
     cursor.execute(sql)
     
-    for i in cursor.fetchall():
-        score = i
-    old_score = score[0]    
-#     print(type(int(old_score)))
-    old_score = int(old_score)
-    print(old_score)
-    if new_score > old_score:
-            cursor.execute(f"""Update {tablename} set рекорд = '{new_score}' where username = '{name}'""")
+#     for i in cursor.fetchall():
+#         score = i
+#     old_score = score[0]    
+# #     print(type(int(old_score)))
+#     old_score = int(old_score)
+#     print(old_score)
+#     if new_score > old_score:
+#             cursor.execute(f"""Update {tablename} set рекорд = '{new_score}' where username = '{name}'""")
 
     config.commit()
     config.close()
@@ -87,7 +87,27 @@ def check_data(name,tablename):
             return True    
     config.commit()
     config.close()
-check_data('SSS','snake')
-update_record('Samat','snake',213)
+def record(tablename,name):
+    config = psycopg2.connect(
+        host='localhost', 
+        database='postgres',
+        port = '5433',
+        user='postgres',
+        password='321qaz'
+        )
+    config.autocommit = True
+    cursor = config.cursor()
+    
+    sql = f"""Select user_score from {tablename} where username = '{name}'"""
+    cursor.execute(sql)
+    for i in cursor.fetchall():
+        return int(i[0])
+    config.commit()
+    config.close()
+    
+    
+# check_data('SSS','snake')
+# update_record('Samat','snake',213)
+print(record('snake','Ernat'))
 # sql2 = f'''DELETE FROM phonebook
 # WHERE username='{name}' ;'''
